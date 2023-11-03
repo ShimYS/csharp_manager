@@ -1,6 +1,6 @@
 ﻿namespace DatetimeManager
 {
-    public class Datetime
+    public class SDatetime
     {
         /// <summary>
         /// Datetime을 매개변수로 전달된 포맷에 맞춰 변경

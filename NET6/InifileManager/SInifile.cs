@@ -5,7 +5,7 @@ using System.Text;
 
 namespace InifileManager
 {
-    public static class Inifile
+    public static class SInifile
     {
         #region [Windows API]
         [DllImport("kernel32.dll")]

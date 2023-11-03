@@ -2,7 +2,7 @@
 
 namespace ValidationManager
 {
-    public class Validation
+    public class SValidation
     {
         #region [String]
         // 숫자인지 확인

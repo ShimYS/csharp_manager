@@ -2,13 +2,13 @@
 
 namespace SerialManager
 {
-    public class Serial
+    public class SSerial
     {
         public string serialName;
         private SerialPort serialPort;
         private Action<string> processReceiveData;
 
-        public Serial(string name, int baudrate, int databits, Parity parity, StopBits stopbits, bool handshake, Action<string> processReceiveData)
+        public SSerial(string name, int baudrate, int databits, Parity parity, StopBits stopbits, bool handshake, Action<string> processReceiveData)
         {
             serialName = name;
             serialPort = new SerialPort(name, baudrate, parity, databits, stopbits);
