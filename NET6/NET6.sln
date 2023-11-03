@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatetimeManager", "DatetimeManager\DatetimeManager.csproj", "{27249C17-1434-46F0-AE32-45BD8092F557}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatetimeManager", "DatetimeManager\DatetimeManager.csproj", "{27249C17-1434-46F0-AE32-45BD8092F557}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SerialManager", "SerialManager\SerialManager.csproj", "{7F866301-731B-4983-9DDC-1489C6E72FD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SerialManager", "SerialManager\SerialManager.csproj", "{7F866301-731B-4983-9DDC-1489C6E72FD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationManager", "ValidationManager\ValidationManager.csproj", "{80576183-8FDF-481C-A422-BB0CA0DDEB92}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationManager", "ValidationManager\ValidationManager.csproj", "{80576183-8FDF-481C-A422-BB0CA0DDEB92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InifileManager", "InifileManager\InifileManager.csproj", "{CFDD9843-FC4E-4C77-9131-7839AFC7CE7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InifileManager", "InifileManager\InifileManager.csproj", "{CFDD9843-FC4E-4C77-9131-7839AFC7CE7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManager", "FileManager\FileManager.csproj", "{9A870F02-5BAD-48B1-836E-E7BB6672CFB7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{CFDD9843-FC4E-4C77-9131-7839AFC7CE7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFDD9843-FC4E-4C77-9131-7839AFC7CE7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFDD9843-FC4E-4C77-9131-7839AFC7CE7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A870F02-5BAD-48B1-836E-E7BB6672CFB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A870F02-5BAD-48B1-836E-E7BB6672CFB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A870F02-5BAD-48B1-836E-E7BB6672CFB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A870F02-5BAD-48B1-836E-E7BB6672CFB7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
