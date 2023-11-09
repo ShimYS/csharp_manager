@@ -67,24 +67,26 @@ namespace UtilityManager
 
         #region [Convert]
         /// <summary>
-        /// 10진수를 2진수로 변환해서 반환
+        /// 숫자를 base의 진수로 변환해서 반환
         /// </summary>
         /// <param name="decimalNum"></param>
         /// <returns></returns>
-        public string DecimalToBinary(int decimalNum)
+        public string DecimalToBase(int decimalNum, int toBase = 2)
         {
-            return Convert.ToString(decimalNum, 2);
+            return Convert.ToString(decimalNum, toBase);
         }
 
         /// <summary>
-        /// 2진수를 10진수로 변환해서 반환
+        /// 숫자를 base진수로 해석해서 10진수로 반환
         /// </summary>
         /// <param name="binary"></param>
         /// <returns></returns>
-        public int BinaryToDecimal(string binary)
+        public int BinaryToDecimal(string binary, int fromBase = 2)
         {
-            return Convert.ToInt32(binary, 2);
+            return Convert.ToInt32(binary, fromBase);
         }
+
+        
         #endregion
 
         #region [Drive]
