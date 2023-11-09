@@ -84,13 +84,115 @@ namespace NetworkManager
             }
         }
         #endregion
+    }
 
-        #region [SERVER]
+    public class SClient
+    {
+        private readonly IPAddress ipAddress;
+        private readonly int port;
+        private TcpClient? _server;
+        private Action<string, byte[]> _processDataAction;
 
-        #endregion
+        /// <summary>
+        /// 생성자
+        /// </summary>
+        /// <param name="ipAddress">IP 주소</param>
+        /// <param name="port">Port 번호</param>
+        /// <param name="processDataAction">서버로 부터 수신한 데이터를 처리하는 메소드</param>
+        public SClient(IPAddress ipAddress, int port, Action<string, byte[]> processDataAction)
+        {
+            this.ipAddress = ipAddress;
+            this.port = port;
+            _processDataAction = processDataAction;
+        }
 
-        #region [CLIENT]
+        /// <summary>
+        /// 서버와 연결 
+        /// </summary>
+        /// <returns></returns>
+        public async Task ConnectAsync()
+        {
+            try
+            {
+                _server = new TcpClient();
+                await _server.ConnectAsync(ipAddress, port);
+                StartListening();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ConnectAsync()] {ex.Message}");
+                _processDataAction?.Invoke($"{ipAddress}, {port} 연결 실패", null);
+            }
+        }
 
-        #endregion
+        private async Task StartListening()
+        {
+            _processDataAction?.Invoke($"{ipAddress}, {port} 연결 성공", null);
+
+            var buffer = new byte[1024];
+
+
+            while (true)
+            {
+
+                var numBytesRead = await _server.GetStream().ReadAsync(buffer, 0, buffer.Length);
+
+                if (numBytesRead == 0)
+                {
+                    break;
+                }
+
+                // 데이터처리
+                _processDataAction?.Invoke(numBytesRead.ToString(), buffer);
+            }
+
+            _server.Close();
+        }
+
+        /// <summary>
+        /// 연결된 서베에 데이터 전송
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public async Task SendAsync(string message)
+        {
+            try
+            {
+                Stream stream = _server.GetStream();
+                var buffer = Encoding.UTF8.GetBytes(message);
+                await stream.WriteAsync(buffer, 0, buffer.Length);
+            }
+            catch (ObjectDisposedException ex)
+            {
+                Console.WriteLine($"[SendAsync()] {ex.Message}");
+                Disconnect();
+            }
+        }
+
+        /// <summary>
+        /// 서버와의 연결 끊기
+        /// </summary>
+        public void Disconnect()
+        {
+            _server.Close();
+            _processDataAction?.Invoke($"{ipAddress}, {port} 연결 끊김", null);
+        }
+
+        /// <summary>
+        /// 서버가 클라이언트와 연결되어 있는지 체크
+        /// </summary>
+        /// <returns>연결된 상태 - true / 연결이 끊긴 상태 - false</returns>
+        public bool Server_IsConnected()
+        {
+            if (_server == null)
+            {
+                return false;
+            }
+            else if (!_server.Connected)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }
