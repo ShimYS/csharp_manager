@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InifileManager", "InifileMa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileManager", "FileManager\FileManager.csproj", "{9A870F02-5BAD-48B1-836E-E7BB6672CFB7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UtilityManager", "UtilityManager\UtilityManager.csproj", "{0FC061C9-6FE0-4DE6-8186-845F10C8D1C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilityManager", "UtilityManager\UtilityManager.csproj", "{0FC061C9-6FE0-4DE6-8186-845F10C8D1C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkManager", "NetworkManager\NetworkManager.csproj", "{FC4FF9D4-2CD8-4ED8-9728-55389AEA887C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetworkManager", "NetworkManager\NetworkManager.csproj", "{FC4FF9D4-2CD8-4ED8-9728-55389AEA887C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitmapManager", "BitmapManager\BitmapManager.csproj", "{FB782043-1065-41AE-9EEF-BA73AF78C309}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{FC4FF9D4-2CD8-4ED8-9728-55389AEA887C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FC4FF9D4-2CD8-4ED8-9728-55389AEA887C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC4FF9D4-2CD8-4ED8-9728-55389AEA887C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB782043-1065-41AE-9EEF-BA73AF78C309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB782043-1065-41AE-9EEF-BA73AF78C309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB782043-1065-41AE-9EEF-BA73AF78C309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB782043-1065-41AE-9EEF-BA73AF78C309}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
